@@ -2,7 +2,7 @@
 
 Gera linhas de log a partir de `lorem_ipsum.txt` e grava em `log_output.txt`. Estude [`script.sh`](script.sh) antes de estender o script.
 
-Enunciado detalhado e estágios **20.M1–M7**: [PLANO-EXERCICIOS.md](../PLANO-EXERCICIOS.md).
+Implementação guiada por estágios: [PLANO-EXERCICIOS.md](../PLANO-EXERCICIOS.md) (seção **21**, M1–M8). Opcional: diretório de log via `LOG_DIR` ([variaveis-ambiente.md](../../fluxos/variaveis-ambiente.md)).
 
 ## ▶️ ▶️ Executar
 

@@ -1,6 +1,6 @@
 # Exercícios — fluxos (I/O e robustez)
 
-[PLANO-EXERCICIOS.md](../pratica/PLANO-EXERCICIOS.md) (seções **10**, **11** e **14**).
+[PLANO-EXERCICIOS.md](../pratica/PLANO-EXERCICIOS.md) (seções **10**, **11**, **14** e **15**).
 
 ### Redirecionamento (teoria: [redirecionamento.md](redirecionamento.md))
 
@@ -26,4 +26,13 @@
 | 14.F1 | F | Script com `set -euo pipefail` que falha de propósito |
 | 14.I1 | I | Pipeline com `pipefail` vs sem |
 
-Essencial antes da [integradora](../pratica/integradora/) estágios M3–M5.
+### Variáveis de ambiente (teoria: [variaveis-ambiente.md](variaveis-ambiente.md))
+
+| ID | Nível | Resumo |
+|----|-------|--------|
+| 15.F1 | F | `HOME`, `USER`, `PATH` |
+| 15.F2 | F | `export` vs variável local no filho |
+| 15.I1 | I | `NOME="${NOME:-visitante}"` |
+| 15.D1 | D | `source` de `CONFIG_FILE` |
+
+Essencial antes da [integradora](../pratica/integradora/) estágios M3–M5 e M8.

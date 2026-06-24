@@ -58,6 +58,7 @@ O foco é **Bash em ambientes Linux-like** (Linux, WSL, Git Bash, macOS com Bash
 | Terminal | Diferenciar emulador, shell e canal (TTY/PTY); escolher o interpretador certo para cada script |
 | Sintaxe Bash | `if`, `case`, loops, funções, arrays, entrada com `read`, cálculos com `$(( ))` e `bc` |
 | Unix no dia a dia | Montar **pipelines** (`grep`, `sort`, `awk`), redirecionar stdout/stderr, parsear arquivos com `IFS` |
+| Configuração | **Variáveis de ambiente**, `export`, arquivos `.env`, defaults com `${VAR:-padrao}` |
 | Robustez | Usar `set -euo pipefail`, exit codes, `trap` para limpeza e reação a Ctrl+C |
 | Rede | Conectar por **SSH**, usar chaves e `~/.ssh/config`, rodar comandos e `scp` em scripts |
 | Projetos | Entregar uma calculadora em shell e evoluir um gerador/tratador de logs com tratamento de erros |
@@ -85,17 +86,17 @@ Scripts em servidores Linux, jobs de **CI/CD**, entrypoints em **Docker**, autom
 
 ### 2. Siga a ordem de estudo
 
-O **README.md** lista **20 passos** sugeridos. Resumo:
+O **README.md** lista **21 passos** sugeridos. Resumo:
 
 | Etapas | Conteúdo |
 |--------|----------|
 | 1–3 | Shell, entrada do usuário, pipes |
 | 4–8 | Condicionais, cálculos, `case`, loops |
-| 9–14 | Funções, redirecionamento, IFS, texto (`grep`/`sed`/`awk`), arrays, robustez |
-| 15 | Projeto **calculadora** |
-| 16–17 | Tmux e TTY/PTY *(opcional)* |
-| 18–19 | Trap (sinais) e SSH |
-| 20 | Projeto **integradora de logs** |
+| 9–15 | Funções, redirecionamento, IFS, texto, arrays, robustez, **variáveis de ambiente** |
+| 16 | Projeto **calculadora** |
+| 17–18 | Tmux e TTY/PTY *(opcional)* |
+| 19–20 | Trap (sinais) e SSH |
+| 21 | Projeto **integradora de logs** |
 
 Leia a teoria de cada pasta, depois abra o **`exercicios.md`** da mesma pasta.
 

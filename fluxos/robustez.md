@@ -84,6 +84,6 @@ Use no topo de scripts novos (integradora, deploy, backup). Em scripts legados, 
 
 ## ➡️ Próximo passo
 
-[tmux/tmux.md](../tmux/tmux.md) *(opcional)* ou [trap/trap.md](../trap/trap.md).
+[variaveis-ambiente.md](variaveis-ambiente.md) — `export`, configuração e ambiente em scripts.
 
 🔙 [Voltar ao índice](../README.md)

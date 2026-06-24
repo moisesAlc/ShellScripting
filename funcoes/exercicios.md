@@ -8,4 +8,4 @@
 | 9.F2 | F | `local` vs global |
 | 9.I1 | I | `eh_numero()` reutilizável |
 
-Depois: refatorar [calculadora](../pratica/calculadora/) (plano **15.M2**).
+Depois: refatorar [calculadora](../pratica/calculadora/) (plano **16.M2**).

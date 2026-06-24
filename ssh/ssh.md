@@ -154,7 +154,7 @@ ssh "$HOST" "cd $REMOTE_DIR && bash scripts/backup.sh"
 1. **Host key em CI** — o runner não tem `known_hosts`; configure chave do servidor de forma explícita ou use `ssh-keyscan` **uma vez** no setup (nunca desative verificação em produção sem motivo).
 2. **Variáveis e quoting** — comando remoto mal citado quebra com espaços ou `$(...)` indesejado; prefira argumentos ou heredoc remoto para trechos longos.
 3. **Caminhos locais vs remotos** — `scp ./x host:~/` envia local; `ssh host 'cat ~/x'` lê remoto.
-4. **Shell remoto ≠ local** — o shebang e o `PATH` do servidor podem diferir; não assuma Bash 5+ nem mesmas ferramentas.
+4. **Shell remoto ≠ local** — o shebang e o `PATH` do servidor podem diferir; variáveis de ambiente também. Ver [variaveis-ambiente.md](../fluxos/variaveis-ambiente.md).
 5. **`set -e` e ssh** — em pipelines, falha remota pode não abortar o script como você espera; teste o exit code explicitamente.
 
 Heredoc remoto (comando multilinha):

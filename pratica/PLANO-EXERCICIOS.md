@@ -172,70 +172,82 @@ Roteiro de prática alinhado à [ordem de estudo](../README.md). Cada tópico tr
 
 ---
 
-## 15. Marco — Calculadora — [pratica/calculadora/](../pratica/calculadora/)
+## 15. variáveis de ambiente — [fluxos/variaveis-ambiente.md](../fluxos/variaveis-ambiente.md)
 
 | ID | Nível | Exercício | Critério de aceite |
 |----|-------|-----------|-------------------|
-| 15.M1 | M | Implemente ou compare com `calculadora.sh`: menu, quatro operações, sair. | Divisão por zero; loop até sair. |
-| 15.M2 | M | **Extra:** uma operação por função com `local`. | Após tópico **9** (funções). |
-| 15.M3 | M | **Extra:** validar operandos numéricos. | stderr se inválido. |
+| 15.F1 | F | Imprima `HOME`, `USER` e `PATH` (uma linha cada). | Valores coerentes com `printenv`. |
+| 15.F2 | F | `export A=1`; rode `bash -c 'echo $A'` sem exportar `B=2`; compare. | Só `A` aparece no filho. |
+| 15.I1 | I | Script `saudacao_env.sh`: usa `NOME="${NOME:-visitante}"` e imprime saudação. | `NOME=Ana bash saudacao_env.sh` muda a saída. |
+| 15.D1 | D | Script lê `CONFIG_FILE` (default `./app.env`); faz `source` se existir; senão stderr + exit 1. | Gabarito: [15-config-env.sh](solucoes/15-config-env.sh). |
 
 ---
 
-## 16. tmux *(opcional)* — [tmux/tmux.md](../tmux/tmux.md)
+## 16. Marco — Calculadora — [pratica/calculadora/](../pratica/calculadora/)
 
 | ID | Nível | Exercício | Critério de aceite |
 |----|-------|-----------|-------------------|
-| 16.F1 | F | Criar sessão `estudo`, desconectar, reconectar. | `tmux new -s estudo`, detach, attach. |
-| 16.I1 | I | Dois painéis: `tail -f` em log e editor. | Navegação entre painéis. |
+| 16.M1 | M | Implemente ou compare com `calculadora.sh`: menu, quatro operações, sair. | Divisão por zero; loop até sair. |
+| 16.M2 | M | **Extra:** uma operação por função com `local`. | Após tópico **9** (funções). |
+| 16.M3 | M | **Extra:** validar operandos numéricos. | stderr se inválido. |
 
 ---
 
-## 17. shell sessões *(opcional)* — [shell/sessoes.md](../shell/sessoes.md)
+## 17. tmux *(opcional)* — [tmux/tmux.md](../tmux/tmux.md)
 
 | ID | Nível | Exercício | Critério de aceite |
 |----|-------|-----------|-------------------|
-| 17.F1 | F | Rode `tty` local e (se possível) via `ssh`. | Comparar `/dev/pts/N`. |
-| 17.I1 | I | Empilhar shells; testar `export` e `exit`. | Comportamento documentado. |
+| 17.F1 | F | Criar sessão `estudo`, desconectar, reconectar. | `tmux new -s estudo`, detach, attach. |
+| 17.I1 | I | Dois painéis: `tail -f` em log e editor. | Navegação entre painéis. |
 
 ---
 
-## 18. trap — [trap/trap.md](../trap/trap.md)
+## 18. shell sessões *(opcional)* — [shell/sessoes.md](../shell/sessoes.md)
 
 | ID | Nível | Exercício | Critério de aceite |
 |----|-------|-----------|-------------------|
-| 18.F1 | F | `trap EXIT` + `mktemp`; arquivo removido ao sair. | Gabarito: [16-trap-cleanup.sh](solucoes/16-trap-cleanup.sh). |
-| 18.F2 | F | `trap SIGINT` durante `sleep 30`. | Ctrl+C limpa e mensagem em stderr. |
-| 18.I1 | I | Integrar `trap` na integradora (estágio 20.M5). | Sem `.tmp` órfão após Ctrl+C. |
+| 18.F1 | F | Rode `tty` local e (se possível) via `ssh`. | Comparar `/dev/pts/N`. |
+| 18.I1 | I | Empilhar shells; testar `export` e `exit`. | Comportamento documentado. |
 
 ---
 
-## 19. ssh — [ssh/ssh.md](../ssh/ssh.md)
+## 19. trap — [trap/trap.md](../trap/trap.md)
 
 | ID | Nível | Exercício | Critério de aceite |
 |----|-------|-----------|-------------------|
-| 19.F1 | F | `ssh usuario@host 'hostname'` (ver [ssh-lab.md](ssh-lab.md)). | Exit code 0. |
-| 19.I1 | I | Alias em `~/.ssh/config`. | `ssh meuservidor` sem repetir host na CLI. |
-| 19.D1 | D | `check_remoto.sh HOST` — diretório remoto existe? | Gabarito: [17-check-remoto.sh](solucoes/17-check-remoto.sh). |
-| 19.D2 | D | `scp` do `integradora/script.sh` para `/tmp` no remoto. | `md5sum` local vs remoto. |
+| 19.F1 | F | `trap EXIT` + `mktemp`; arquivo removido ao sair. | Gabarito: [16-trap-cleanup.sh](solucoes/16-trap-cleanup.sh). |
+| 19.F2 | F | `trap SIGINT` durante `sleep 30`. | Ctrl+C limpa e mensagem em stderr. |
+| 19.I1 | I | Integrar `trap` na integradora (estágio 21.M5). | Sem `.tmp` órfão após Ctrl+C. |
+
+---
+
+## 20. ssh — [ssh/ssh.md](../ssh/ssh.md)
+
+| ID | Nível | Exercício | Critério de aceite |
+|----|-------|-----------|-------------------|
+| 20.F1 | F | `ssh usuario@host 'hostname'` (ver [ssh-lab.md](ssh-lab.md)). | Exit code 0. |
+| 20.I1 | I | Alias em `~/.ssh/config`. | `ssh meuservidor` sem repetir host na CLI. |
+| 20.D1 | D | `check_remoto.sh HOST` — diretório remoto existe? | Gabarito: [17-check-remoto.sh](solucoes/17-check-remoto.sh). |
+| 20.D2 | D | `scp` do `integradora/script.sh` para `/tmp` no remoto. | `md5sum` local vs remoto. |
 
 *Sem servidor:* [ssh-lab.md](ssh-lab.md) — localhost, Docker ou VM.
 
 ---
 
-## 20. Marco — Integradora de logs (por estágios)
+## 21. Marco — Integradora de logs (por estágios)
 
 Base: [pratica/integradora/](../pratica/integradora/). Siga **M1 → M5** antes dos extras.
 
 | ID | Nível | Estágio | O que fazer | Critério de aceite |
 |----|-------|---------|-------------|-------------------|
-| 20.M1 | M | Rodar o base | Entender `script.sh` e saída. | Linhas `timestamp - TAG - texto`. |
-| 20.M2 | M | Entrada e stderr | Entrada ausente → stderr + `input_error_log.txt`. | Falha visível. |
-| 20.M3 | M | Saída gravável | Log não gravável → stderr claro. | Teste com `chmod 000` (restaurar depois). |
-| 20.M4 | M | Log de erros | Tags `ERROR` em `error_log.txt`. | Subset consistente com log principal. |
-| 20.M5 | M | Robustez | `trap` + opcional `set -euo pipefail`. | Ver [robustez.md](../fluxos/robustez.md). |
-| 20.M6 | M | Extra | Rotação de log ou múltiplas fontes. | Documentado. |
-| 20.M7 | M | Extra | Relatório com `grep`/`awk` (tópico **12**). | `relatorio_log.sh` ou equivalente. |
+| 21.M1 | M | Rodar o base | Entender `script.sh` e saída. | Linhas `timestamp - TAG - texto`. |
+| 21.M2 | M | Entrada e stderr | Entrada ausente → stderr + `input_error_log.txt`. | Falha visível. |
+| 21.M3 | M | Saída gravável | Log não gravável → stderr claro. | Teste com `chmod 000` (restaurar depois). |
+| 21.M4 | M | Log de erros | Tags `ERROR` em `error_log.txt`. | Subset consistente com log principal. |
+| 21.M5 | M | Robustez | `trap` + opcional `set -euo pipefail`. | Ver [robustez.md](../fluxos/robustez.md). |
+| 21.M6 | M | Extra | Rotação de log ou múltiplas fontes. | Documentado. |
+| 21.M7 | M | Extra | Relatório com `grep`/`awk` (tópico **12**). | `relatorio_log.sh` ou equivalente. |
+| 21.M8 | M | Extra | `LOG_DIR` via variável de ambiente (tópico **15**). | Default `./logs` se unset. |
 
 ---
 
@@ -263,14 +275,15 @@ Estrutura e dados
 [ ] 12.F–D  texto (grep/sed/awk)
 [ ] 13.F–D  arrays
 [ ] 14.F–I  robustez (set -euo pipefail)
+[ ] 15.F–D  variáveis de ambiente
 
 Projetos e ops
-[ ] 15.M    calculadora (M1 mínimo; M2–M3 extras)
-[ ] 16–17   tmux / sessoes (opcional)
-[ ] 18.F–I  trap
-[ ] 19.F–D  ssh (+ ssh-lab)
-[ ] 20.M1–M5 integradora (mínimo viável)
-[ ] 20.M6–M7 integradora (extras)
+[ ] 16.M    calculadora (M1 mínimo; M2–M3 extras)
+[ ] 17–18   tmux / sessoes (opcional)
+[ ] 19.F–I  trap
+[ ] 20.F–D  ssh (+ ssh-lab)
+[ ] 21.M1–M5 integradora (mínimo viável)
+[ ] 21.M6–M8 integradora (extras)
 ```
 
 ---

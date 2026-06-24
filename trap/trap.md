@@ -58,7 +58,7 @@ Use com moderação — o usuário pode ficar preso.
 
 ## Exercícios
 
-IDs **18.F1–18.I1** em [exercicios.md](exercicios.md) e [PLANO-EXERCICIOS.md](../pratica/PLANO-EXERCICIOS.md). Gabarito: [16-trap-cleanup.sh](../pratica/solucoes/16-trap-cleanup.sh).
+IDs **19.F1–19.I1** em [exercicios.md](exercicios.md) e [PLANO-EXERCICIOS.md](../pratica/PLANO-EXERCICIOS.md). Gabarito: [16-trap-cleanup.sh](../pratica/solucoes/16-trap-cleanup.sh).
 
 ## ➡️ Próximo passo
 

@@ -20,12 +20,13 @@ Material de estudo e prática em **Shell Scripting** (Bash), organizado **por t�
 | 12 | [texto/manipulacao.md](texto/manipulacao.md) | `grep`, `sed`, `awk` |
 | 13 | [arrays/arrays.md](arrays/arrays.md) | Arrays |
 | 14 | [fluxos/robustez.md](fluxos/robustez.md) | `set -euo pipefail`, exit codes |
-| 15 | [pratica/calculadora/](pratica/calculadora/) | Projeto: calculadora |
-| 16 | [tmux/tmux.md](tmux/tmux.md) | Sessões no terminal *(opcional)* |
-| 17 | [shell/sessoes.md](shell/sessoes.md) | TTY/PTY, empilhamento, Windows/macOS *(opcional)* |
-| 18 | [trap/trap.md](trap/trap.md) | `SIGINT`, `EXIT`, `SIGHUP`, limpeza |
-| 19 | [ssh/ssh.md](ssh/ssh.md) | Chaves, `~/.ssh/config`, `scp`, scripts remotos |
-| 20 | [pratica/integradora/](pratica/integradora/) | Projeto: integradora de logs |
+| 15 | [fluxos/variaveis-ambiente.md](fluxos/variaveis-ambiente.md) | `export`, `PATH`, config, `.env` |
+| 16 | [pratica/calculadora/](pratica/calculadora/) | Projeto: calculadora |
+| 17 | [tmux/tmux.md](tmux/tmux.md) | Sessões no terminal *(opcional)* |
+| 18 | [shell/sessoes.md](shell/sessoes.md) | TTY/PTY, empilhamento, Windows/macOS *(opcional)* |
+| 19 | [trap/trap.md](trap/trap.md) | `SIGINT`, `EXIT`, `SIGHUP`, limpeza |
+| 20 | [ssh/ssh.md](ssh/ssh.md) | Chaves, `~/.ssh/config`, `scp`, scripts remotos |
+| 21 | [pratica/integradora/](pratica/integradora/) | Projeto: integradora de logs |
 
 🚀 Comece por [O que é um shell?](shell/shell.md).
 
@@ -41,7 +42,7 @@ Material de estudo e prática em **Shell Scripting** (Bash), organizado **por t�
 | [case/](case/) | [case.md](case/case.md) | [exercicios.md](case/exercicios.md) |
 | [loop/](loop/) | [for.md](loop/for.md), [while.md](loop/while.md) | [exercicios.md](loop/exercicios.md) |
 | [funcoes/](funcoes/) | [funcoes.md](funcoes/funcoes.md) | [exercicios.md](funcoes/exercicios.md) |
-| [fluxos/](fluxos/) | [redirecionamento.md](fluxos/redirecionamento.md), [IFS.md](fluxos/IFS.md), [robustez.md](fluxos/robustez.md) | [exercicios.md](fluxos/exercicios.md) |
+| [fluxos/](fluxos/) | [redirecionamento.md](fluxos/redirecionamento.md), [IFS.md](fluxos/IFS.md), [robustez.md](fluxos/robustez.md), [variaveis-ambiente.md](fluxos/variaveis-ambiente.md) | [exercicios.md](fluxos/exercicios.md) |
 | [texto/](texto/) | [manipulacao.md](texto/manipulacao.md) | [exercicios.md](texto/exercicios.md) |
 | [arrays/](arrays/) | [arrays.md](arrays/arrays.md) | [exercicios.md](arrays/exercicios.md) |
 | [tmux/](tmux/) | [tmux.md](tmux/tmux.md) | [exercicios.md](tmux/exercicios.md) |
@@ -54,7 +55,7 @@ Material de estudo e prática em **Shell Scripting** (Bash), organizado **por t�
 - 📖 Dominar sintaxe e idiomas comuns do Bash para scripts reutilizáveis.
 - 🔁 Entender **condicionais**, **loops**, **funções**, **arrays** e manipulação de texto.
 - 🔗 Usar **pipes**, **redirecionamento** e variáveis como `IFS` de forma consciente.
-- ⌨️ Trabalhar com **entrada do usuário**, **cálculos** e ferramentas auxiliares (por exemplo `tmux`).
+- ⌨️ Trabalhar com **entrada do usuário**, **cálculos**, variáveis de **ambiente** e ferramentas auxiliares (por exemplo `tmux`).
 
 ## ✅ Pré-requisitos
 
@@ -84,7 +85,6 @@ Material de estudo e prática em **Shell Scripting** (Bash), organizado **por t�
 ## 📌 Extensões planejadas
 
 - 🌐 HTTP com `curl`
-- ⚙️ Variáveis de ambiente e config
 - 🖥️ Redirecionamento avançado (heredoc, subshells)
 
 Links antigos: [CAMINHOS-ANTIGOS.md](CAMINHOS-ANTIGOS.md).

@@ -18,10 +18,12 @@ bash pratica/solucoes/04-paridade.sh   # teste manual
 | Arquivo | Exercício | O que demonstra |
 |---------|-----------|-----------------|
 | [02-saudacao.sh](02-saudacao.sh) | 2.F1 | `read -p`, aspas em `"$nome"` |
-| [04-paridade.sh](04-paridade.sh) | 4.F1 | `if`, validação numérica, stderr |
 | [03-resumo_log.sh](03-resumo_log.sh) | 3.D1 | `$1`, `grep -c`, arquivo ausente |
-| [16-trap-cleanup.sh](16-trap-cleanup.sh) | 16.F1 | `trap` + `EXIT` + `mktemp` |
-| [17-check-remoto.sh](17-check-remoto.sh) | 17.D1 | `ssh` com exit code (host configurável) |
+| [04-paridade.sh](04-paridade.sh) | 4.F1 | `if`, validação numérica, stderr |
+| [15-config-env.sh](15-config-env.sh) | 15.D1 | `source` de `CONFIG_FILE` + `set -a` |
+| [app.env.exemplo](app.env.exemplo) | — | Arquivo de exemplo para o gabarito 15 |
+| [16-trap-cleanup.sh](16-trap-cleanup.sh) | 19.F1 | `trap` + `EXIT` + `mktemp` |
+| [17-check-remoto.sh](17-check-remoto.sh) | 20.D1 | `ssh` com exit code (host configurável) |
 
 ## Suas soluções
 
