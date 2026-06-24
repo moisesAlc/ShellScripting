@@ -89,6 +89,8 @@ Material de estudo e prática em **Shell Scripting** (Bash), organizado **por t�
 
 Links antigos: [CAMINHOS-ANTIGOS.md](CAMINHOS-ANTIGOS.md).
 
+**Guia para alunos (impressão/PDF):** [GUIA-ALUNO.md](GUIA-ALUNO.md)
+
 ## 📌 Licença e uso
 
 Material para estudo e formação. Se existir `LICENSE` na raiz, siga-o ao forkar.
