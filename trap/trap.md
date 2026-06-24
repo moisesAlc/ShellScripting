@@ -1,65 +1,67 @@
 # ⚡ Trap
 
-No contexto do shell scripting no Bash, o comando trap é uma ferramenta poderosa que permite a programadores definir ações ou manipuladores que serão executados em resposta a sinais ou outros eventos específicos. Isso é extremamente útil para lidar com interrupções inesperadas, como terminações de programas, sinais de interrupção do usuário (como ```Ctrl+C```), ou para executar a limpeza do script quando ele termina naturalmente ou por erro.
+O comando `trap` define ações executadas quando o script recebe **sinais** ou termina. Serve para limpeza (arquivos temporários), resposta a Ctrl+C e comportamento ao encerrar a sessão (incluindo queda de SSH — ver [SIGHUP](#sighup)).
 
-## ⚡ Funcionalidade Básica do Trap
-O comando trap intercepta sinais enviados para o script e executa um comando ou uma série de comandos em resposta. Sinais são notificações enviadas a processos para indicar que um evento específico ocorreu. Alguns dos sinais mais comuns incluem:
+## Sinais comuns
 
-```SIGINT```: O sinal de interrupção, geralmente enviado ao programa quando você pressiona Ctrl+C.
+| Sinal | Quando ocorre |
+|-------|----------------|
+| `SIGINT` | Ctrl+C no terminal |
+| `SIGTERM` | Pedido de encerramento (`kill PID`) |
+| `EXIT` | Script termina (sucesso ou erro) — não é sinal POSIX, extensão do Bash |
+| `SIGHUP` | Terminal fechado ou conexão SSH caiu — ver [SSH](../ssh/ssh.md) e [TTY/PTY](../shell/sessoes.md) |
 
-```SIGTERM```: Sinal de terminação padrão, usado para solicitar o encerramento do programa.
-
-```EXIT```: Não é exatamente um sinal, mas pode ser capturado por trap para executar comandos quando o script termina.
-
-```SIGHUP```: Sinal enviado para terminar processos após o fechamento de um terminal — comum ao **cair a conexão SSH** ou fechar o emulador. Ver [SSH](../ssh/ssh.md) e [Shell: TTY/PTY](../shell/sessoes.md).
-
-
-## ⚡ Sintaxe do Trap
-A sintaxe básica do comando trap é:
+## Sintaxe
 
 ```bash
 trap 'comandos' SINAL
+trap -p                    # listar traps ativos
+trap - SINAL               # remover handler
 ```
 
-```'comandos'```: Comandos a serem executados quando o sinal especificado é recebido. Os comandos devem ser fornecidos como uma string.
+Os comandos ficam entre **aspas simples** para evitar expansão prematura de variáveis (ou use funções com cuidado).
 
-```SINAL```: O nome do sinal que, quando recebido pelo script, acionará a execução dos comandos.
-
-## ⚡ Exemplos de Uso do Trap
-
-### 🔹 Capturando o Ctrl+C
-Para capturar um ```Ctrl+C (SIGINT)``` e executar uma função de limpeza:
+## Capturar Ctrl+C
 
 ```bash
-trap 'echo "Ctrl+C foi pressionado. Saindo..."; exit' SIGINT
+trap 'echo "Interrompido." >&2; exit 130' SIGINT
+
+while true; do
+  sleep 1
+done
 ```
 
-## 📌 Limpeza ao Sair
-Para executar comandos de limpeza independentemente de como o script termina (normalmente ou por um sinal):
+Exit `130` é convenção comum após SIGINT (128 + 2).
+
+## Limpeza ao sair (`EXIT`)
 
 ```bash
-trap 'rm -f /tmp/arquivo_temporario' EXIT
+tmp=$(mktemp)
+trap 'rm -f "$tmp"' EXIT
+
+# use $tmp; ao sair (normal ou erro), o arquivo some
 ```
 
-Neste exemplo, um arquivo temporário é removido quando o script é finalizado.
-
-## ⚡ Ignorando um Sinal
-Você também pode configurar um script para ignorar completamente sinais, o que pode ser útil para garantir que um script não seja interrompido prematuramente:
+## Ignorar um sinal
 
 ```bash
-trap '' SIGINT
+trap '' SIGINT    # Ctrl+C ignorado neste script
 ```
 
-## 🛠️ Boas Práticas
-### 🔹 Use Trap para Limpeza:
-trap é ideal para limpar arquivos temporários, restaurar configurações ou qualquer outra tarefa de limpeza necessária para deixar tudo em um estado consistente após o término do script.
-### 🔹 Evite Comandos Complexos no Trap:
-Embora você possa tecnicamente colocar qualquer comando no trap, é melhor manter os comandos simples e não depender de funções ou comandos externos que possam falhar.
-### 🔹 Teste os Traps com Diferentes Sinais:
-Diferentes sistemas e terminais podem comportar-se de maneira ligeiramente diferente, então é uma boa prática testar como os sinais são manipulados em seu ambiente específico.
+Use com moderação — o usuário pode ficar preso.
+
+## Boas práticas
+
+- Mantenha o corpo do `trap` **simples** (rm, echo, exit).
+- Combine `trap` com [robustez](../fluxos/robustez.md) (`set -euo pipefail`) na integradora.
+- Teste Ctrl+C e `exit` normal.
+
+## Exercícios
+
+IDs **18.F1–18.I1** em [exercicios.md](exercicios.md) e [PLANO-EXERCICIOS.md](../pratica/PLANO-EXERCICIOS.md). Gabarito: [16-trap-cleanup.sh](../pratica/solucoes/16-trap-cleanup.sh).
 
 ## ➡️ Próximo passo
 
-[SSH](../ssh/ssh.md) — shell remoto, chaves e automação com scripts.
+[SSH](../ssh/ssh.md) — shell remoto e automação.
 
 🔙 [Voltar ao índice](../README.md)

@@ -139,4 +139,6 @@ cat arquivo.log | grep "erro" > erros_encontrados.log
 ### 🔹 Boas Práticas
 #### ▫️ ▫️ Arquivos de Backup: Ao redirecionar saídas para arquivos, certifique-se de que não está sobrescrevendo arquivos importantes inadvertidamente. Considere fazer backups antes de executar scripts que modificam arquivos.
 
+Próximo: [IFS.md](IFS.md) · [robustez.md](robustez.md) · [exercicios.md](exercicios.md)
+
 🔙 [Voltar ao índice](../README.md)

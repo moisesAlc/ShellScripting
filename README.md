@@ -14,37 +14,40 @@ Material de estudo e prática em **Shell Scripting** (Bash), organizado **por t�
 | 6 | [case/case.md](case/case.md) | Menus com `case` |
 | 7 | [loop/for.md](loop/for.md) | Loop `for` |
 | 8 | [loop/while.md](loop/while.md) | Loop `while` |
-| 9 | [pratica/calculadora/](pratica/calculadora/) | Projeto: calculadora |
-| 10 | [funcoes/funcoes.md](funcoes/funcoes.md) | Funções |
-| 11 | [fluxos/redirecionamento.md](fluxos/redirecionamento.md) | `stdin` / `stdout` / `stderr` |
-| 12 | [fluxos/IFS.md](fluxos/IFS.md) | Parsing de campos, `while read` |
+| 9 | [funcoes/funcoes.md](funcoes/funcoes.md) | Funções |
+| 10 | [fluxos/redirecionamento.md](fluxos/redirecionamento.md) | `stdin` / `stdout` / `stderr` |
+| 11 | [fluxos/IFS.md](fluxos/IFS.md) | Parsing de campos, `while read` |
+| 12 | [texto/manipulacao.md](texto/manipulacao.md) | `grep`, `sed`, `awk` |
 | 13 | [arrays/arrays.md](arrays/arrays.md) | Arrays |
-| 14 | [tmux/tmux.md](tmux/tmux.md) | Sessões no terminal *(opcional)* |
-| 15 | [shell/sessoes.md](shell/sessoes.md) | TTY/PTY, empilhamento, Windows/macOS *(opcional)* |
-| 16 | [trap/trap.md](trap/trap.md) | `SIGINT`, `EXIT`, `SIGHUP`, limpeza |
-| 17 | [ssh/ssh.md](ssh/ssh.md) | Chaves, `~/.ssh/config`, `scp`, scripts remotos |
-| 18 | [pratica/integradora/](pratica/integradora/) | Projeto: integradora de logs |
+| 14 | [fluxos/robustez.md](fluxos/robustez.md) | `set -euo pipefail`, exit codes |
+| 15 | [pratica/calculadora/](pratica/calculadora/) | Projeto: calculadora |
+| 16 | [tmux/tmux.md](tmux/tmux.md) | Sessões no terminal *(opcional)* |
+| 17 | [shell/sessoes.md](shell/sessoes.md) | TTY/PTY, empilhamento, Windows/macOS *(opcional)* |
+| 18 | [trap/trap.md](trap/trap.md) | `SIGINT`, `EXIT`, `SIGHUP`, limpeza |
+| 19 | [ssh/ssh.md](ssh/ssh.md) | Chaves, `~/.ssh/config`, `scp`, scripts remotos |
+| 20 | [pratica/integradora/](pratica/integradora/) | Projeto: integradora de logs |
 
 🚀 Comece por [O que é um shell?](shell/shell.md).
 
 ## 📂 Tópicos (índice)
 
-| Pasta | Arquivos principais |
-|-------|---------------------|
-| [shell/](shell/) | [shell.md](shell/shell.md), [sessoes.md](shell/sessoes.md) |
-| [entrada_usuario/](entrada_usuario/) | [entrada.md](entrada_usuario/entrada.md) |
-| [pipe/](pipe/) | [pipe.md](pipe/pipe.md), `script.sh`, `log.txt` |
-| [condicional/](condicional/) | [condicional.md](condicional/condicional.md), `teste_then.sh` |
-| [calculos/](calculos/) | [calculos.md](calculos/calculos.md) |
-| [case/](case/) | [case.md](case/case.md), `script.sh` |
-| [loop/](loop/) | [for.md](loop/for.md), [while.md](loop/while.md) |
-| [funcoes/](funcoes/) | [funcoes.md](funcoes/funcoes.md) |
-| [fluxos/](fluxos/) | [redirecionamento.md](fluxos/redirecionamento.md), [IFS.md](fluxos/IFS.md) |
-| [arrays/](arrays/) | [arrays.md](arrays/arrays.md) |
-| [tmux/](tmux/) | [tmux.md](tmux/tmux.md) |
-| [trap/](trap/) | [trap.md](trap/trap.md) |
-| [ssh/](ssh/) | [ssh.md](ssh/ssh.md) |
-| [pratica/](pratica/) | [PLANO-EXERCICIOS.md](pratica/PLANO-EXERCICIOS.md), [iniciante.md](pratica/iniciante.md), [calculadora/](pratica/calculadora/), [integradora/](pratica/integradora/) |
+| Pasta | Teoria | Exercícios |
+|-------|--------|------------|
+| [shell/](shell/) | [shell.md](shell/shell.md), [sessoes.md](shell/sessoes.md) | [exercicios.md](shell/exercicios.md) |
+| [entrada_usuario/](entrada_usuario/) | [entrada.md](entrada_usuario/entrada.md) | [exercicios.md](entrada_usuario/exercicios.md) |
+| [pipe/](pipe/) | [pipe.md](pipe/pipe.md) | [exercicios.md](pipe/exercicios.md) |
+| [condicional/](condicional/) | [condicional.md](condicional/condicional.md) | [exercicios.md](condicional/exercicios.md) |
+| [calculos/](calculos/) | [calculos.md](calculos/calculos.md) | [exercicios.md](calculos/exercicios.md) |
+| [case/](case/) | [case.md](case/case.md) | [exercicios.md](case/exercicios.md) |
+| [loop/](loop/) | [for.md](loop/for.md), [while.md](loop/while.md) | [exercicios.md](loop/exercicios.md) |
+| [funcoes/](funcoes/) | [funcoes.md](funcoes/funcoes.md) | [exercicios.md](funcoes/exercicios.md) |
+| [fluxos/](fluxos/) | [redirecionamento.md](fluxos/redirecionamento.md), [IFS.md](fluxos/IFS.md), [robustez.md](fluxos/robustez.md) | [exercicios.md](fluxos/exercicios.md) |
+| [texto/](texto/) | [manipulacao.md](texto/manipulacao.md) | [exercicios.md](texto/exercicios.md) |
+| [arrays/](arrays/) | [arrays.md](arrays/arrays.md) | [exercicios.md](arrays/exercicios.md) |
+| [tmux/](tmux/) | [tmux.md](tmux/tmux.md) | [exercicios.md](tmux/exercicios.md) |
+| [trap/](trap/) | [trap.md](trap/trap.md) | [exercicios.md](trap/exercicios.md) |
+| [ssh/](ssh/) | [ssh.md](ssh/ssh.md) | [exercicios.md](ssh/exercicios.md) |
+| [pratica/](pratica/) | [calculadora/](pratica/calculadora/), [integradora/](pratica/integradora/) | [PLANO-EXERCICIOS.md](pratica/PLANO-EXERCICIOS.md) |
 
 ## 🎯 Objetivos
 
@@ -58,24 +61,19 @@ Material de estudo e prática em **Shell Scripting** (Bash), organizado **por t�
 - 📚 Linux ou ambiente compatível com **Bash** (versão 4+ recomendada para arrays).
 - 🖥️ No Windows ou macOS: [shell.md](shell/shell.md) (visão geral) e [shell/sessoes.md](shell/sessoes.md) (Git Bash, WSL, macOS).
 
-## 💡 Projetos práticos
+## 💡 Prática
 
-**Plano completo de exercícios** — [pratica/PLANO-EXERCICIOS.md](pratica/PLANO-EXERCICIOS.md) (fixação por tópico, marcos e checklist).
+| Recurso | Descrição |
+|---------|-----------|
+| [PLANO-EXERCICIOS.md](pratica/PLANO-EXERCICIOS.md) | Roteiro completo com critérios de aceite |
+| [solucoes/](pratica/solucoes/README.md) | Gabaritos de referência |
+| [validar-solucoes.sh](pratica/validar-solucoes.sh) | Checagem de sintaxe dos gabaritos |
+| [ssh-lab.md](pratica/ssh-lab.md) | Praticar SSH em localhost/Docker |
+| [iniciante.md](pratica/iniciante.md) | Atalho para os primeiros exercícios |
 
-**Exercícios leves (trecho inicial)** — [pratica/iniciante.md](pratica/iniciante.md) (itens 2–3 do plano, após `pipe`).
+**🧮 Calculadora** — `bash pratica/calculadora/calculadora.sh`
 
-**🧮 Calculadora**:
-
-```bash
-bash pratica/calculadora/calculadora.sh
-```
-
-**📜 Integradora de logs** — [enunciado](pratica/integradora/README.md):
-
-```bash
-cd pratica/integradora
-bash script.sh
-```
+**📜 Integradora** — `cd pratica/integradora && bash script.sh` ([enunciado](pratica/integradora/README.md))
 
 ## 📌 Convenções rápidas
 
@@ -85,12 +83,11 @@ bash script.sh
 
 ## 📌 Extensões planejadas
 
-- 🔗 Exit codes e `set -euo pipefail`
 - 🌐 HTTP com `curl`
 - ⚙️ Variáveis de ambiente e config
 - 🖥️ Redirecionamento avançado (heredoc, subshells)
 
-Sem provedor de cloud nesta fase. Links antigos: [CAMINHOS-ANTIGOS.md](CAMINHOS-ANTIGOS.md).
+Links antigos: [CAMINHOS-ANTIGOS.md](CAMINHOS-ANTIGOS.md).
 
 ## 📌 Licença e uso
 

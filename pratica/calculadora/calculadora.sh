@@ -1,8 +1,13 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-if ! command -v bc &> /dev/null; then
-    sudo apt update
-    sudo apt install -y bc
+if ! command -v bc &>/dev/null; then
+  echo "bc não encontrado. Instale manualmente:" >&2
+  echo "  Debian/Ubuntu: sudo apt install bc" >&2
+  echo "  macOS:         brew install bc" >&2
+  echo "  Divisão com decimais ficará indisponível até instalar bc." >&2
+  BC_DISPONIVEL=0
+else
+  BC_DISPONIVEL=1
 fi
 
 adicao() {
@@ -43,8 +48,10 @@ divisao() {
     echo "--------DIVISÃO---------"
     read -p "Digite o primeiro número: " num1
     read -p "Digite o segundo número: " num2
-    if [ $num2 -eq 0 ]; then
-        echo "Erro: divisão por zero!"
+    if [ "$num2" -eq 0 ]; then
+        echo "Erro: divisão por zero!" >&2
+    elif [ "$BC_DISPONIVEL" -eq 0 ]; then
+        echo "Erro: bc necessário para divisão decimal." >&2
     else
         resultado=$(echo "scale=2; $num1 / $num2" | bc)
         echo "Resultado da divisão: $resultado"

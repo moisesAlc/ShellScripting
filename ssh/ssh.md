@@ -201,7 +201,7 @@ Host app-interno
 ssh app-interno    # conexão em dois saltos, transparente para você
 ```
 
-Equivalente na linha de comando: `ssh -J admin@jump.exemplo.com deploy@10.0.0.5`.
+Pratique sem servidor externo: [pratica/ssh-lab.md](../pratica/ssh-lab.md). Exercícios: [exercicios.md](exercicios.md).
 
 ## 🔹 Erros comuns
 

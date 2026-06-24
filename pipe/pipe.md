@@ -41,8 +41,10 @@ Ao usar pipes, os dados são processados em fluxo (streaming), o que significa q
 Pipes permitem a construção de cadeias de comandos que podem realizar tarefas complexas de processamento de dados com poucas linhas de código.
 ### 🔹 Considerações ao Usar Pipes
 #### ▫️ ▫️ Falhas no Pipeline:
-Se um comando em um pipeline falha, isso pode afetar toda a cadeia. Alguns shells, como Bash, têm opções (set -o pipefail) que mudam o comportamento do pipeline para tratar esses casos de maneira mais robusta.
+Se um comando em um pipeline falha, isso pode afetar toda a cadeia. Veja [fluxos/robustez.md](../fluxos/robustez.md) (`set -o pipefail`).
 #### ▫️ ▫️ Custos de Performance:
 Embora eficientes, pipes podem ser custosos em termos de performance se não forem bem estruturados, especialmente se cada passo do pipeline processar grandes volumes de dados.
+
+Aprofundar: [texto/manipulacao.md](../texto/manipulacao.md) · Exercícios: [exercicios.md](exercicios.md) · [PLANO-EXERCICIOS.md](../pratica/PLANO-EXERCICIOS.md)
 
 🔙 [Voltar ao índice](../README.md)

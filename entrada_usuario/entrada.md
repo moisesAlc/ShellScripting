@@ -35,6 +35,8 @@ Além do `-p`, o comando `read` oferece:
 
 
 ## 🔒 Considerações de Segurança
-Quando você solicita entrada do usuário, é importante considerar questões de segurança, especialmente quando se trata de informações sensíveis, como senhas. Evite exibir senhas na tela e use opções como -s para tornar a entrada silenciosa. Além disso, sempre valide e sanitize a entrada do usuário para evitar vulnerabilidades de segurança, como injeção de código.
+Quando solicita entrada do usuário, é importante considerar questões de segurança, especialmente quando se trata de informações sensíveis, como senhas. Evite exibir senhas na tela e use opções como `-s` para tornar a entrada silenciosa. Além disso, sempre valide e sanitize a entrada do usuário para evitar vulnerabilidades de segurança, como injeção de código.
+
+Exercícios: [exercicios.md](exercicios.md)
 
 🔙 [Voltar ao índice](../README.md)

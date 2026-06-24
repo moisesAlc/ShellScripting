@@ -8,6 +8,8 @@ Roteiro de prática alinhado à [ordem de estudo](../README.md). Cada tópico tr
 2. Faça os exercícios na ordem; pule só se já dominar o assunto.
 3. Salve seus scripts em `pratica/minha-solucao/<topico>/` (crie a pasta localmente; não precisa versionar).
 4. Antes de entregar para si mesmo: `bash -n script.sh` e teste com entrada normal, vazia e inválida quando fizer sentido.
+5. Compare com [gabaritos](solucoes/README.md): `bash pratica/validar-solucoes.sh`.
+6. Cada pasta tem [exercicios.md](../shell/exercicios.md) com o recorte do tópico; SSH sem servidor: [ssh-lab.md](ssh-lab.md).
 
 ### Níveis
 
@@ -35,7 +37,7 @@ Roteiro de prática alinhado à [ordem de estudo](../README.md). Cada tópico tr
 | 1.F2 | F | No mesmo terminal, rode `echo $0`, depois `bash`, de novo `echo $0`, depois `exit`. | O nome do shell muda com `bash` e volta após `exit`. |
 | 1.I1 | I | Identifique no seu sistema: shell de login (`echo $SHELL`), interpretador ativo (`ps -p $$ -o comm=`) e se `/bin/sh` é dash ou bash (`readlink -f /bin/sh`, `ls -l /bin/sh`). | Anote os três resultados num comentário no topo de um script vazio. |
 
-*Aprofundamento opcional:* [shell/sessoes.md](../shell/sessoes.md) — exercícios na seção 15 abaixo.
+*Aprofundamento opcional:* [shell/sessoes.md](../shell/sessoes.md) — exercícios na seção **17** abaixo. Recorte: [shell/exercicios-sessoes.md](../shell/exercicios-sessoes.md).
 
 ---
 
@@ -110,46 +112,44 @@ Roteiro de prática alinhado à [ordem de estudo](../README.md). Cada tópico tr
 
 ---
 
-## 9. Marco — Calculadora — [pratica/calculadora/](../pratica/calculadora/)
+## 9. funcoes — [funcoes/funcoes.md](../funcoes/funcoes.md)
 
 | ID | Nível | Exercício | Critério de aceite |
 |----|-------|-----------|-------------------|
-| 9.M1 | M | Implemente ou compare com `calculadora.sh`: menu, quatro operações, sair. | Divisão por zero tratada; loop até opção sair. |
-| 9.M2 | M | **Extra:** uma operação por função com `local` nas variáveis internas. | Refatorar após ler [funcoes/funcoes.md](../funcoes/funcoes.md) (item 10). |
-| 9.M3 | M | **Extra:** validar que operandos são números antes de calcular. | Mensagem em stderr se inválido. |
-
-*Nota:* Se ainda não leu funções, faça 9.M1 com código linear; volte em 9.M2 depois do tópico 10.
+| 9.F1 | F | Função `saudacao()` que usa `$1` e `echo`. | Chamar três vezes com nomes diferentes. |
+| 9.F2 | F | Função com `local` que não altera variável global homônima. | Demonstrar com `echo` antes/depois. |
+| 9.I1 | I | Extrair validação numérica para `eh_numero()` reutilizável. | Usada em `media.sh` ou na calculadora. |
 
 ---
 
-## 10. funcoes — [funcoes/funcoes.md](../funcoes/funcoes.md)
+## 10. redirecionamento — [fluxos/redirecionamento.md](../fluxos/redirecionamento.md)
 
 | ID | Nível | Exercício | Critério de aceite |
 |----|-------|-----------|-------------------|
-| 10.F1 | F | Função `saudacao()` que usa `$1` e `echo`. | Chamar três vezes com nomes diferentes. |
-| 10.F2 | F | Função com `local` que não altera variável global homônima. | Demonstrar com `echo` antes/depois. |
-| 10.I1 | I | Extrair validação numérica para `eh_numero()` usada em 5.I1 ou 9.M3. | Reutilização em pelo menos dois pontos do script. |
+| 10.F1 | F | `comando_inexistente 2> erros.txt` — confira o arquivo. | stderr capturado; stdout não misturado. |
+| 10.F2 | F | Redirecione stdout e stderr para arquivos **diferentes** no mesmo comando. | Dois arquivos com conteúdo correto. |
+| 10.I1 | I | Script `duplica_log.sh`: copia stdin para dois arquivos (`tee` ou redirecionamento). | Teste: `echo teste \| bash duplica_log.sh a.txt b.txt`. |
+| 10.D1 | D | Wrapper: `bash roda.sh script.sh` grava stdout em `saida.log` e stderr em `erro.log`. | Exit code do script filho preservado (`$?`). |
 
 ---
 
-## 11. redirecionamento — [fluxos/redirecionamento.md](../fluxos/redirecionamento.md)
+## 11. IFS — [fluxos/IFS.md](../fluxos/IFS.md)
 
 | ID | Nível | Exercício | Critério de aceite |
 |----|-------|-----------|-------------------|
-| 11.F1 | F | `comando_inexistente 2> erros.txt` — confira o arquivo. | stderr capturado; stdout não misturado. |
-| 11.F2 | F | Redirecione stdout e stderr para arquivos **diferentes** no mesmo comando. | Dois arquivos com conteúdo correto. |
-| 11.I1 | I | Script `duplica_log.sh`: copia stdin para dois arquivos (`tee` ou redirecionamento). | Teste: `echo teste \| bash duplica_log.sh a.txt b.txt`. |
-| 11.D1 | D | Wrapper: `bash roda.sh script.sh` grava stdout em `saida.log` e stderr em `erro.log`. | Exit code do script filho preservado (`$?`). |
+| 11.F1 | F | Ler `/etc/passwd` (ou CSV fake): imprimir só o primeiro campo por linha. | `IFS=:` ou `IFS=,` conforme arquivo. |
+| 11.I1 | I | Script que soma a terceira coluna de um CSV de três colunas. | `while IFS=, read -r c1 c2 c3`. |
+| 11.D1 | D | Converter `pipe/log.txt` em resumo: tipo e contagem por tipo. | Saída tabular simples. |
 
 ---
 
-## 12. IFS — [fluxos/IFS.md](../fluxos/IFS.md)
+## 12. manipulação de texto — [texto/manipulacao.md](../texto/manipulacao.md)
 
 | ID | Nível | Exercício | Critério de aceite |
 |----|-------|-----------|-------------------|
-| 12.F1 | F | Ler `/etc/passwd` (ou arquivo fake CSV): imprimir só o primeiro campo por linha. | `IFS=:` ou `IFS=,` conforme arquivo. |
-| 12.I1 | I | Script que soma a terceira coluna de um CSV de três colunas. | `while IFS=, read -r c1 c2 c3`. |
-| 12.D1 | D | Converter `pipe/log.txt` em resumo: tipo (palavra antes do `:`) e contagem por tipo. | Saída tabular simples. |
+| 12.F1 | F | `grep` + `awk`: contar linhas por tag no `log_output.txt` da integradora. | Saída legível (tag + contagem). |
+| 12.I1 | I | Pipeline `grep ERROR … \| awk … \| sort` extraindo timestamp e mensagem. | Documentar cada estágio. |
+| 12.D1 | D | Script `relatorio_log.sh ARQUIVO` — resumo por tag (integradora M7). | Aceita path como `$1`. |
 
 ---
 
@@ -158,65 +158,84 @@ Roteiro de prática alinhado à [ordem de estudo](../README.md). Cada tópico tr
 | ID | Nível | Exercício | Critério de aceite |
 |----|-------|-----------|-------------------|
 | 13.F1 | F | Array de 5 frutas; imprimir todas com `${frutas[@]}`. | Índice e tamanho `${#frutas[@]}`. |
-| 13.I1 | I | Sorteio: array de nomes (`INFO`, `WARN`, `ERROR`); escolha aleatória como na integradora. | Mesma ideia de `indice=$(($RANDOM % ${#arr[@]}))`. |
-| 13.D1 | D | Script que recebe N números como argumentos e imprime min, max e média (Bash 4+). | Sem `bc` se usar só inteiros; com `bc` se média decimal. |
+| 13.I1 | I | Sorteio: array `INFO`/`WARN`/`ERROR` como na integradora. | `indice=$(($RANDOM % ${#arr[@]}))`. |
+| 13.D1 | D | Script: min, max e média dos argumentos (Bash 4+). | Entrada vazia tratada. |
 
 ---
 
-## 14. tmux *(opcional)* — [tmux/tmux.md](../tmux/tmux.md)
+## 14. robustez — [fluxos/robustez.md](../fluxos/robustez.md)
 
 | ID | Nível | Exercício | Critério de aceite |
 |----|-------|-----------|-------------------|
-| 14.F1 | F | Criar sessão `estudo`, desconectar, reconectar. | `tmux new -s estudo`, detach, `tmux attach -t estudo`. |
-| 14.I1 | I | Dois painéis: um com `tail -f` em log, outro com editor. | Navegação entre painéis sem fechar sessão. |
+| 14.F1 | F | Script com `set -euo pipefail` onde um comando falha de propósito. | Script para; sem `set -e` continuaria. |
+| 14.I1 | I | Pipeline: comparar exit code com e sem `set -o pipefail`. | Documentar diferença em comentário. |
 
 ---
 
-## 15. shell sessões *(opcional)* — [shell/sessoes.md](../shell/sessoes.md)
+## 15. Marco — Calculadora — [pratica/calculadora/](../pratica/calculadora/)
 
 | ID | Nível | Exercício | Critério de aceite |
 |----|-------|-----------|-------------------|
-| 15.F1 | F | Rode `tty` no terminal local e (se possível) dentro de `ssh` remoto. | Comparar `/dev/pts/N` vs console. |
-| 15.I1 | I | Empilhe `zsh`/`bash` (ou dois bash): `export VAR=1`, entre no subshell, mude `VAR`, `exit`, verifique valor no pai. | Comportamento documentado em comentário. |
+| 15.M1 | M | Implemente ou compare com `calculadora.sh`: menu, quatro operações, sair. | Divisão por zero; loop até sair. |
+| 15.M2 | M | **Extra:** uma operação por função com `local`. | Após tópico **9** (funções). |
+| 15.M3 | M | **Extra:** validar operandos numéricos. | stderr se inválido. |
 
 ---
 
-## 16. trap — [trap/trap.md](../trap/trap.md)
+## 16. tmux *(opcional)* — [tmux/tmux.md](../tmux/tmux.md)
 
 | ID | Nível | Exercício | Critério de aceite |
 |----|-------|-----------|-------------------|
-| 16.F1 | F | Script que cria `/tmp/meu_teste_$$.txt`, `trap` no `EXIT` remove o arquivo. | Arquivo some ao terminar normalmente. |
-| 16.F2 | F | Mesmo script: `trap` em `SIGINT` (Ctrl+C) limpa e sai com mensagem. | Testar interrupção no meio de `sleep 30`. |
-| 16.I1 | I | Integrar `trap` na integradora (milestone M3 abaixo): limpar temp ou restaurar trap ao sair. | Sem arquivos `.tmp` órfãos após Ctrl+C. |
+| 16.F1 | F | Criar sessão `estudo`, desconectar, reconectar. | `tmux new -s estudo`, detach, attach. |
+| 16.I1 | I | Dois painéis: `tail -f` em log e editor. | Navegação entre painéis. |
 
 ---
 
-## 17. ssh — [ssh/ssh.md](../ssh/ssh.md)
+## 17. shell sessões *(opcional)* — [shell/sessoes.md](../shell/sessoes.md)
 
 | ID | Nível | Exercício | Critério de aceite |
 |----|-------|-----------|-------------------|
-| 17.F1 | F | Conectar a um host (ou `localhost` se configurado) com `ssh usuario@host 'hostname'`. | Exit code 0; saída é o hostname remoto. |
-| 17.I1 | I | Entrada em `~/.ssh/config` para um alias `meuservidor`. | `ssh meuservidor` funciona sem repetir usuário/host na linha de comando. |
-| 17.D1 | D | `check_remoto.sh HOST`: testa se diretório existe remotamente (`ssh … 'test -d …'`), imprime ok/falha e usa exit code. | `BatchMode=yes` ou documentar necessidade de chave. |
-| 17.D2 | D | Copiar `pratica/integradora/script.sh` para `/tmp` no remoto com `scp`. | Arquivo idêntico (`diff` ou `md5sum`). |
-
-*Sem servidor:* use segunda máquina, VM, WSL↔Windows host ou container local; documente o ambiente no README da sua solução.
+| 17.F1 | F | Rode `tty` local e (se possível) via `ssh`. | Comparar `/dev/pts/N`. |
+| 17.I1 | I | Empilhar shells; testar `export` e `exit`. | Comportamento documentado. |
 
 ---
 
-## 18. Marco — Integradora de logs (por estágios)
+## 18. trap — [trap/trap.md](../trap/trap.md)
 
-Base: [pratica/integradora/](../pratica/integradora/). Não implemente tudo de uma vez — siga **M1 → M5**.
+| ID | Nível | Exercício | Critério de aceite |
+|----|-------|-----------|-------------------|
+| 18.F1 | F | `trap EXIT` + `mktemp`; arquivo removido ao sair. | Gabarito: [16-trap-cleanup.sh](solucoes/16-trap-cleanup.sh). |
+| 18.F2 | F | `trap SIGINT` durante `sleep 30`. | Ctrl+C limpa e mensagem em stderr. |
+| 18.I1 | I | Integrar `trap` na integradora (estágio 20.M5). | Sem `.tmp` órfão após Ctrl+C. |
+
+---
+
+## 19. ssh — [ssh/ssh.md](../ssh/ssh.md)
+
+| ID | Nível | Exercício | Critério de aceite |
+|----|-------|-----------|-------------------|
+| 19.F1 | F | `ssh usuario@host 'hostname'` (ver [ssh-lab.md](ssh-lab.md)). | Exit code 0. |
+| 19.I1 | I | Alias em `~/.ssh/config`. | `ssh meuservidor` sem repetir host na CLI. |
+| 19.D1 | D | `check_remoto.sh HOST` — diretório remoto existe? | Gabarito: [17-check-remoto.sh](solucoes/17-check-remoto.sh). |
+| 19.D2 | D | `scp` do `integradora/script.sh` para `/tmp` no remoto. | `md5sum` local vs remoto. |
+
+*Sem servidor:* [ssh-lab.md](ssh-lab.md) — localhost, Docker ou VM.
+
+---
+
+## 20. Marco — Integradora de logs (por estágios)
+
+Base: [pratica/integradora/](../pratica/integradora/). Siga **M1 → M5** antes dos extras.
 
 | ID | Nível | Estágio | O que fazer | Critério de aceite |
 |----|-------|---------|-------------|-------------------|
-| 18.M1 | M | Rodar o base | Entender `script.sh`, `lorem_ipsum.txt`, saída em `log_output.txt`. | Gera linhas `timestamp - TAG - texto`. |
-| 18.M2 | M | Entrada e stderr | Se entrada ausente: mensagem em **stderr** + registro em `input_error_log.txt` + exit ≠ 0. | `bash script.sh` com arquivo renomeado falha de forma visível. |
-| 18.M3 | M | Saída gravável | Se não puder escrever em `log_output.txt`: stderr claro, sem falha silenciosa. | Teste com `chmod 000` no log (restaurar depois). |
-| 18.M4 | M | Log de erros | Linhas com tag `ERROR` (ou `ERRO`) também em `error_log.txt`. | `grep ERROR error_log.txt` bate com subset do log principal. |
-| 18.M5 | M | Robustez | `trap` no `EXIT`/`SIGINT`; opcional: `set -euo pipefail` onde fizer sentido. | Ctrl+C não deixa processo pendurado; temp limpo. |
-| 18.M6 | M | Extra | Rotação: se `log_output.txt` > N linhas, renomear para `.old` e recomeçar. | Ou segundo arquivo de entrada; documentar escolha. |
-| 18.M7 | M | Extra | Filtro: relatório `grep`/`awk` com contagem por tag a partir do log gerado. | Script ou one-liner documentado no README da solução. |
+| 20.M1 | M | Rodar o base | Entender `script.sh` e saída. | Linhas `timestamp - TAG - texto`. |
+| 20.M2 | M | Entrada e stderr | Entrada ausente → stderr + `input_error_log.txt`. | Falha visível. |
+| 20.M3 | M | Saída gravável | Log não gravável → stderr claro. | Teste com `chmod 000` (restaurar depois). |
+| 20.M4 | M | Log de erros | Tags `ERROR` em `error_log.txt`. | Subset consistente com log principal. |
+| 20.M5 | M | Robustez | `trap` + opcional `set -euo pipefail`. | Ver [robustez.md](../fluxos/robustez.md). |
+| 20.M6 | M | Extra | Rotação de log ou múltiplas fontes. | Documentado. |
+| 20.M7 | M | Extra | Relatório com `grep`/`awk` (tópico **12**). | `relatorio_log.sh` ou equivalente. |
 
 ---
 
@@ -237,29 +256,30 @@ Sintaxe
 [ ] 7.F–I   loop for
 [ ] 8.F–I   loop while
 
-Consolidação
-[ ] 9.M     calculadora (M1 mínimo)
-[ ] 10.F–I  funcoes (+ 9.M2 se refatorou)
-[ ] 11.F–D  redirecionamento
-[ ] 12.F–D  IFS
+Estrutura e dados
+[ ] 9.F–I   funcoes
+[ ] 10.F–D  redirecionamento
+[ ] 11.F–D  IFS
+[ ] 12.F–D  texto (grep/sed/awk)
 [ ] 13.F–D  arrays
+[ ] 14.F–I  robustez (set -euo pipefail)
 
-Ops e projetos
-[ ] 14–15   tmux / sessoes (opcional)
-[ ] 16.F–I  trap
-[ ] 17.F–D  ssh (se tiver host)
-[ ] 18.M1–M5 integradora (mínimo viável)
-[ ] 18.M6–M7 integradora (extras)
+Projetos e ops
+[ ] 15.M    calculadora (M1 mínimo; M2–M3 extras)
+[ ] 16–17   tmux / sessoes (opcional)
+[ ] 18.F–I  trap
+[ ] 19.F–D  ssh (+ ssh-lab)
+[ ] 20.M1–M5 integradora (mínimo viável)
+[ ] 20.M6–M7 integradora (extras)
 ```
 
 ---
 
-## O que vem depois deste plano
+## Recursos do repositório
 
-Quando os marcos M estiverem estáveis, o material pode ganhar:
-
-- Arquivos `exercicios.md` por pasta (só o recorte daquele tópico).
-- Pasta `pratica/solucoes/` com gabaritos opcionais (ou links para branches).
-- Reordenação do README alinhada a funções → fluxos → calculadora.
-
-Por ora, este arquivo é o **mapa único** de exercícios do repositório.
+| Recurso | Caminho |
+|---------|---------|
+| Exercícios por pasta | `<topico>/exercicios.md` |
+| Gabaritos | [pratica/solucoes/](solucoes/README.md) |
+| Validar sintaxe dos gabaritos | `bash pratica/validar-solucoes.sh` |
+| SSH sem nuvem | [pratica/ssh-lab.md](ssh-lab.md) |
