@@ -44,7 +44,7 @@ Material de estudo e prática em **Shell Scripting** (Bash), organizado **por t�
 | [tmux/](tmux/) | [tmux.md](tmux/tmux.md) |
 | [trap/](trap/) | [trap.md](trap/trap.md) |
 | [ssh/](ssh/) | [ssh.md](ssh/ssh.md) |
-| [pratica/](pratica/) | [iniciante.md](pratica/iniciante.md), [calculadora/](pratica/calculadora/), [integradora/](pratica/integradora/) |
+| [pratica/](pratica/) | [PLANO-EXERCICIOS.md](pratica/PLANO-EXERCICIOS.md), [iniciante.md](pratica/iniciante.md), [calculadora/](pratica/calculadora/), [integradora/](pratica/integradora/) |
 
 ## 🎯 Objetivos
 
@@ -60,7 +60,9 @@ Material de estudo e prática em **Shell Scripting** (Bash), organizado **por t�
 
 ## 💡 Projetos práticos
 
-**Exercícios leves** — [pratica/iniciante.md](pratica/iniciante.md) (após `pipe`).
+**Plano completo de exercícios** — [pratica/PLANO-EXERCICIOS.md](pratica/PLANO-EXERCICIOS.md) (fixação por tópico, marcos e checklist).
+
+**Exercícios leves (trecho inicial)** — [pratica/iniciante.md](pratica/iniciante.md) (itens 2–3 do plano, após `pipe`).
 
 **🧮 Calculadora**:
 

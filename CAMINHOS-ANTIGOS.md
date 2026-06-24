@@ -23,6 +23,7 @@ Se você tinha bookmark para a estrutura por **níveis** (`niveis/`) ou para pas
 | `niveis/intermediario/pratica/calculadora/` | [pratica/calculadora/](pratica/calculadora/) |
 | `niveis/avancado/pratica/integradora/` | [pratica/integradora/](pratica/integradora/) |
 | `niveis/README.md` | [README.md](README.md) (ordem de estudo) |
+| — | [pratica/PLANO-EXERCICIOS.md](pratica/PLANO-EXERCICIOS.md) (plano de exercícios) |
 
 ## Raiz histórica (antes de `niveis/`)
 

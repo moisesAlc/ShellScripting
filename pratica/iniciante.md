@@ -1,6 +1,6 @@
-# 🛠️ Prática — iniciante
+# 🛠️ Prática — trecho inicial
 
-Exercícios leves após `shell`, `entrada_usuario` e `pipe`. Ainda sem `if` complexo ou loops (veja a [ordem de estudo](../README.md)).
+Exercícios leves após `shell`, `entrada_usuario` e `pipe`. O roteiro completo está em [PLANO-EXERCICIOS.md](PLANO-EXERCICIOS.md) (IDs 2.F1, 3.F1–3.I1).
 
 ## 📌 Sugestões
 
