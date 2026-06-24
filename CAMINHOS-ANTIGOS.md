@@ -1,20 +1,44 @@
-# 📌 Caminhos antigos (raiz do repositório)
+# 📌 Caminhos antigos
 
-O conteúdo foi reorganizado em [`niveis/`](niveis/README.md). Se você tinha bookmark ou link para a estrutura antiga na raiz, use a tabela abaixo.
+Se você tinha bookmark para a estrutura por **níveis** (`niveis/`) ou para pastas antigas na raiz, use a tabela abaixo.
 
-| 🔄 Caminho antigo | Caminho atual |
+## Estrutura `niveis/` (descontinuada)
+
+| Caminho antigo | Caminho atual |
 |----------------|---------------|
-| 🖥️ `shell/` | [`niveis/iniciante/shell/`](niveis/iniciante/shell/shell.md) |
-| ⌨️ `entrada_usuario/` | [`niveis/iniciante/entrada_usuario/`](niveis/iniciante/entrada_usuario/entrada.md) |
-| 🔗 `pipe/` | [`niveis/iniciante/pipe/`](niveis/iniciante/pipe/pipe.md) |
-| 🔀 `condicional/` | [`niveis/intermediario/condicional/`](niveis/intermediario/condicional/condicional.md) |
-| 🔢 `calculos/` | [`niveis/intermediario/calculos/`](niveis/intermediario/calculos/calculos.md) |
-| 📋 `case/` | [`niveis/intermediario/case/`](niveis/intermediario/case/case.md) |
-| 🔁 `loop/` | [`niveis/intermediario/loop/`](niveis/intermediario/loop/for.md) |
-| 📦 `funcoes/` | [`niveis/intermediario/funcoes/`](niveis/intermediario/funcoes/funcoes.md) |
-| 📌 `fluxos/` | [`niveis/intermediario/fluxos/`](niveis/intermediario/fluxos/redirecionamento.md) |
-| 📚 `arrays/` | [`niveis/intermediario/arrays/`](niveis/intermediario/arrays/arrays.md) |
-| 🪟 `tmux/` | [`niveis/intermediario/tmux/`](niveis/intermediario/tmux/tmux.md) |
-| ⚡ `trap/` | [`niveis/avancado/trap/`](niveis/avancado/trap/trap.md) |
-| 🧮 `atividades/01.calculadora/` | [`niveis/intermediario/pratica/calculadora/`](niveis/intermediario/pratica/calculadora/) |
-| 📜 `atividades/02.integradora/` | [`niveis/avancado/pratica/integradora/`](niveis/avancado/pratica/integradora/) |
+| `niveis/iniciante/shell/shell.md` | [shell/shell.md](shell/shell.md) |
+| `niveis/avancado/shell/shell.md` | [shell/sessoes.md](shell/sessoes.md) |
+| `niveis/iniciante/entrada_usuario/entrada.md` | [entrada_usuario/entrada.md](entrada_usuario/entrada.md) |
+| `niveis/iniciante/pipe/` | [pipe/](pipe/pipe.md) |
+| `niveis/intermediario/condicional/` | [condicional/](condicional/condicional.md) |
+| `niveis/intermediario/calculos/` | [calculos/](calculos/calculos.md) |
+| `niveis/intermediario/case/` | [case/](case/case.md) |
+| `niveis/intermediario/loop/` | [loop/](loop/for.md) |
+| `niveis/intermediario/funcoes/` | [funcoes/](funcoes/funcoes.md) |
+| `niveis/intermediario/fluxos/` | [fluxos/](fluxos/redirecionamento.md) |
+| `niveis/intermediario/arrays/` | [arrays/](arrays/arrays.md) |
+| `niveis/intermediario/tmux/` | [tmux/](tmux/tmux.md) |
+| `niveis/avancado/trap/` | [trap/](trap/trap.md) |
+| `niveis/avancado/ssh/` | [ssh/](ssh/ssh.md) |
+| `niveis/intermediario/pratica/calculadora/` | [pratica/calculadora/](pratica/calculadora/) |
+| `niveis/avancado/pratica/integradora/` | [pratica/integradora/](pratica/integradora/) |
+| `niveis/README.md` | [README.md](README.md) (ordem de estudo) |
+
+## Raiz histórica (antes de `niveis/`)
+
+| Caminho antigo | Caminho atual |
+|----------------|---------------|
+| `shell/` | [shell/shell.md](shell/shell.md) |
+| `entrada_usuario/` | [entrada_usuario/](entrada_usuario/entrada.md) |
+| `pipe/` | [pipe/](pipe/pipe.md) |
+| `condicional/` | [condicional/](condicional/condicional.md) |
+| `calculos/` | [calculos/](calculos/calculos.md) |
+| `case/` | [case/](case/case.md) |
+| `loop/` | [loop/](loop/for.md) |
+| `funcoes/` | [funcoes/](funcoes/funcoes.md) |
+| `fluxos/` | [fluxos/](fluxos/redirecionamento.md) |
+| `arrays/` | [arrays/](arrays/arrays.md) |
+| `tmux/` | [tmux/](tmux/tmux.md) |
+| `trap/` | [trap/](trap/trap.md) |
+| `atividades/01.calculadora/` | [pratica/calculadora/](pratica/calculadora/) |
+| `atividades/02.integradora/` | [pratica/integradora/](pratica/integradora/) |
