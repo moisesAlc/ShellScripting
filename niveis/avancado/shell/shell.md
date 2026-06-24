@@ -98,7 +98,7 @@ Casos frequentes:
 
 - ⌨️ `bash script.sh` — script em Bash mesmo com prompt Zsh.
 - 📖 `sh script.sh` — pode usar **dash** ou Bash em modo POSIX, conforme o sistema.
-- 🖥️ SSH: shell remoto; dentro dele, outro shell ou `tmux`.
+- 🖥️ SSH: shell remoto; dentro dele, outro shell ou `tmux`. Ver [SSH](../ssh/ssh.md).
 - 🖥️ CI/contêineres: job em `/bin/bash` independente do shell padrão do runner.
 
 Mudanças **dentro** do shell interno (`cd`, `export`) em geral **não** alteram o pai — `exit` restaura o nível anterior.

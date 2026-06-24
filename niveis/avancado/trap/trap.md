@@ -11,7 +11,7 @@ O comando trap intercepta sinais enviados para o script e executa um comando ou 
 
 ```EXIT```: Não é exatamente um sinal, mas pode ser capturado por trap para executar comandos quando o script termina.
 
-```SIGHUP```: Sinal enviado para terminar processos após o fechamento de um terminal.
+```SIGHUP```: Sinal enviado para terminar processos após o fechamento de um terminal — comum ao **cair a conexão SSH** ou fechar o emulador. Ver [SSH](../ssh/ssh.md) e [Shell: TTY/PTY](../shell/shell.md).
 
 
 ## ⚡ Sintaxe do Trap
@@ -57,5 +57,9 @@ trap é ideal para limpar arquivos temporários, restaurar configurações ou qu
 Embora você possa tecnicamente colocar qualquer comando no trap, é melhor manter os comandos simples e não depender de funções ou comandos externos que possam falhar.
 ### 🔹 Teste os Traps com Diferentes Sinais:
 Diferentes sistemas e terminais podem comportar-se de maneira ligeiramente diferente, então é uma boa prática testar como os sinais são manipulados em seu ambiente específico.
+
+## ➡️ Próximo passo
+
+[SSH](../ssh/ssh.md) — shell remoto, chaves e automação com scripts.
 
 🔙 [Voltar para trilha avançada](../README.md)
